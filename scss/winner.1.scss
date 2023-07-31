@@ -8,7 +8,6 @@ body {
 }
 
 .style-one {
-    // align-self: flex-end;
     display: inherit;
     padding: 0 0;
 
@@ -18,24 +17,11 @@ body {
         text-align: left;
         overflow: hidden;
 
-        .ship-elements {
-            margin: 0;
-            z-index: 10;
-            display: grid;
-            position: absolute;
-            grid-template-columns: auto;
-            grid-template-rows: min-content min-content min-content;
-
-            top: 50%;
-            left: 20%;
-            transform: translateY(-50%);
-        }
-
         svg {
             position: absolute;
             height: 100%;
             width: 100%;
-            z-index: 5;
+            z-index: 0;
 
             path {
                 fill: pink;
@@ -44,5 +30,33 @@ body {
                 stroke-width: .5vw;
             }
         }
+    }
+}
+
+.ship-elements {
+    margin: 0;
+    z-index: 10;
+    display: grid;
+    position: absolute;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+
+    .ship {
+        margin: 2vh 0;
+        padding: 0 0 0 2vw;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 6vh;
+    }
+
+    p {
+        margin: 0;
+        font-size: 4vh;
     }
 }
