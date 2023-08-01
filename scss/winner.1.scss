@@ -17,6 +17,14 @@ body {
         text-align: left;
         overflow: hidden;
 
+        .ship-elements {
+            left: 20%;
+        }
+
+        .score {
+            left: 0%;
+        }
+
         svg {
             position: absolute;
             height: 100%;
@@ -30,10 +38,6 @@ body {
                 stroke-width: .5vw;
             }
         }
-
-        .ship-elements {
-            left: 20%;
-        }
     }
 
     .blue-box {
@@ -46,11 +50,15 @@ body {
             right: 20%;
         }
 
+        .score {
+            right: 0%;
+        }
+
         svg {
             position: absolute;
             height: 100%;
             width: 100%;
-            z-index: 3;
+            z-index: 4;
 
             path {
                 fill: lightblue;
@@ -92,4 +100,8 @@ body {
         height: 1em;
         // overflow: hidden;
     }
+}
+
+.score {
+    position: absolute;
 }
