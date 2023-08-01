@@ -30,6 +30,10 @@ body {
                 stroke-width: .5vw;
             }
         }
+
+        .ship-elements {
+            left: 20%;
+        }
     }
 
     .blue-box {
@@ -37,6 +41,10 @@ body {
         // position: relative;
         text-align: right;
         overflow: hidden;
+
+        .ship-elements {
+            right: 20%;
+        }
 
         svg {
             position: absolute;
@@ -48,7 +56,7 @@ body {
                 fill: lightblue;
                 stroke: black;
                 stroke-linecap: square;
-                stroke-width: .9vw;
+                stroke-width: .5vw;
             }
         }
     }
@@ -63,26 +71,25 @@ body {
     grid-template-rows: auto auto auto;
 
     top: 50%;
-    left: 20%;
     transform: translateY(-50%);
 
     .ship {
         margin: 2.5vh 0;
         width: 40vw;
-        padding: 0 0 0 2vw;
+        padding: 0 2vw;
     }
 
     h1 {
         margin: 0;
         font-size: 5.5vh;
         height: 1em;
-        overflow: hidden;
+        // overflow: hidden;
     }
 
     p {
         margin: 0;
         font-size: 4vh;
         height: 1em;
-        overflow: hidden;
+        // overflow: hidden;
     }
 }
