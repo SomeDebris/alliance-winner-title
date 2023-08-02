@@ -12,7 +12,8 @@ const _graphic = (function() {
     let blue_alliance;
     // 0 = Red alliance
     // 1 = Blue alliance
-    let winner;
+    let winner = 0;
+    let destruction = false;
 
     (function() {
         window['update'] = (raw) => update(raw);
@@ -54,10 +55,19 @@ const _graphic = (function() {
     }
 
     function calculateWinner() {
-        if (red_alliance.damageTaken >= blue_alliance.damageTaken)
+        if (red_alliance.damageTaken >= blue_alliance.damageTaken) {
             winner = 0;
-        else
+
+            if (blue_alliance.damageTaken === 0) {
+                destruction = true;
+            }
+        } else {
             winner = 1;
+
+            if (red_alliance.damageTaken === 0) {
+                destruction = true;
+            }
+        }
     }
 
     function update(raw) {
