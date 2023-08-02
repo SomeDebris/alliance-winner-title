@@ -60,12 +60,16 @@ const _graphic = (function() {
 
             if (blue_alliance.damageTaken === 0) {
                 destruction = true;
+            } else {
+                destruction = false;
             }
         } else {
             winner = 1;
 
             if (red_alliance.damageTaken === 0) {
                 destruction = true;
+            } else {
+                destruction = false;
             }
         }
     }
