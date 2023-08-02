@@ -7,14 +7,33 @@ body {
     width: 100vw;
 }
 
+html {
+    --red-fill0: red;
+    --red-fill1: pink;
+    --blue-fill0: blue;
+    --blue-fill1: lightblue;
+}
+
 @keyframes red-oscillation {
-    from {fill: red;}
-    to {fill: pink;}
+    from {
+        fill: var(--red-fill0);
+    }
+    to {
+        fill: var(--red-fill1);
+    }
 }
 
 @keyframes blue-oscillation {
-    from {fill: blue;}
-    to {fill: lightblue;}
+    from {
+        fill: var(--blue-fill0);
+    }
+    to {
+        fill: var(--blue-fill1);
+    }
+}
+
+svg {
+    fill-opacity: 50%;
 }
 
 .style-one {
@@ -47,7 +66,8 @@ body {
                 stroke-linecap: square;
                 stroke-width: .5vw;
                 animation-name: red-oscillation;
-                animation-duration: 5;
+                animation-duration: 5s;
+                animation-direction: alternate;
                 animation-iteration-count: infinite;
             }
         }
@@ -79,7 +99,8 @@ body {
                 stroke-linecap: square;
                 stroke-width: .5vw;
                 animation-name: blue-oscillation;
-                animation-duration: 4;
+                animation-duration: 4s;
+                animation-direction: alternate;
                 animation-iteration-count: infinite;
             }
         }

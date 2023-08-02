@@ -79,7 +79,39 @@ const _graphic = (function() {
 
     // look at colors and do stuff with em.
     function updateStyle() {
+        let red_color0 = "red";
+        let red_color1 = "red";
+        let blue_color0 = "blue";
+        let blue_color1 = "blue";
 
+        if (red_alliance.color0) {
+            red_color0 = red_alliance.color0;
+        } else {
+            handleWarning('No RED color0 specified');
+        }
+
+        if (red_alliance.color1) {
+            red_color1 = red_alliance.color1;
+        } else {
+            handleWarning('No RED color1 specified');
+        }
+
+        if (blue_alliance.color0) {
+            blue_color0 = blue_alliance.color0;
+        } else {
+            handleWarning('No BLUE color0 specified');
+        }
+
+        if (blue_alliance.color1) {
+            blue_color1 = blue_alliance.color1;
+        } else {
+            handleWarning('No BLUE color1 specified');
+        }
+
+        document.documentElement.style.setProperty("--red-fill0", red_color0);
+        document.documentElement.style.setProperty("--red-fill1", red_color1);
+        document.documentElement.style.setProperty("--blue-fill0", blue_color0);
+        document.documentElement.style.setProperty("--blue-fill1", blue_color1);
     }
 
     function update(raw) {

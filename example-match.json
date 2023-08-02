@@ -3,8 +3,8 @@
     "type": "Q",
     "red": {
         "name": "Red Alliance",
-        "color0": "#000000",
-        "color1": "#000000",
+        "color0": "#baa01e",
+        "color1": "#681818",
         "lineColor": "#000000",
         "damageTaken": 10000,
         "damageDealt": 100000,
@@ -54,8 +54,8 @@
 
     "blue": {
         "name": "Blue Alliance",
-        "color0": "#000000",
-        "color1": "#000000",
+        "color0": "#0aa879",
+        "color1": "#222d84",
         "lineColor": "#000000",
         "damageTaken": 10000,
         "damageDealt": 100000,
