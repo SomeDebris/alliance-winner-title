@@ -7,6 +7,35 @@ body {
   width: 100vw;
 }
 
+html {
+  --red-fill0: red;
+  --red-fill1: pink;
+  --blue-fill0: blue;
+  --blue-fill1: lightblue;
+}
+
+@keyframes red-oscillation {
+  from {
+    fill: var(--red-fill0);
+    fill-opacity: 10%;
+  }
+  to {
+    fill: var(--red-fill1);
+    fill-opacity: 10%;
+  }
+}
+@keyframes blue-oscillation {
+  from {
+    fill: var(--blue-fill0);
+  }
+  to {
+    fill: var(--blue-fill1);
+  }
+}
+svg {
+  fill-opacity: 10%;
+}
+
 .style-one {
   display: inherit;
   padding: 0 0;
@@ -32,6 +61,10 @@ body {
   stroke: black;
   stroke-linecap: square;
   stroke-width: 0.5vw;
+  animation-name: red-oscillation;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 .style-one .blue-box {
   text-align: right;
@@ -54,6 +87,10 @@ body {
   stroke: black;
   stroke-linecap: square;
   stroke-width: 0.5vw;
+  animation-name: blue-oscillation;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
 .ship-elements {
