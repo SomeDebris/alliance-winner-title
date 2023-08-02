@@ -10,14 +10,17 @@ const _graphic = (function() {
     let match_type;
     let red_alliance;
     let blue_alliance;
+    // 0 = Red alliance
+    // 1 = Blue alliance
+    let winner;
 
     (function() {
-        window['update'] = (match_data) => update(match_data);
+        window['update'] = (raw) => update(raw);
         window['play']   = play;
         window['next']   = next;
         window['stop']   = stop;
         window['remove'] = remove;
-    });
+    })();
 
     // match_data is gonna have the following:
     // who participated
@@ -39,7 +42,7 @@ const _graphic = (function() {
     function updateBlue() {
         const blue_box = document.querySelector('.style-one .blue-box');
         const [ship1_name, ship2_name, ship3_name] = blue_box.querySelectorAll('.ship h1');
-        const [ship1_author, ship2_author, ship3_author] = red_box.querySelectorAll('.ship p');
+        const [ship1_author, ship2_author, ship3_author] = blue_box.querySelectorAll('.ship p');
 
         ship1_name.textContent = blue_alliance.ships[0].name;
         ship2_name.textContent = blue_alliance.ships[1].name;
@@ -50,11 +53,18 @@ const _graphic = (function() {
         ship3_author.textContent = blue_alliance.ships[2].author;
     }
 
-    function update(match_data) {
+    function calculateWinner() {
+        if (red_alliance.damageTaken >= blue_alliance.damageTaken)
+            winner = 0;
+        else
+            winner = 1;
+    }
+
+    function update(raw) {
         let parsed;
 
         try {
-            parsed = JSON.parsed(match_data);
+            parsed = JSON.parse(raw);
             if (!Object.keys(parsed).length) {
                 throw new Error('Empty objects are Invalid!');
             }
@@ -63,6 +73,11 @@ const _graphic = (function() {
                 handleWarning('No RED alliance specified!');
             if (!parsed.blue)
                 handleWarning('No BLUE alliance specified!');
+
+            if (!parsed.red.damageTaken)
+                throw new Error('RED alliance has no DAMAGE TAKEN score!');
+            if (!parsed.blue.damageTaken)
+                throw new Error('BLUE alliance has no DAMAGE TAKEN score!');
 
         } catch (e) {
             handleError(e);
@@ -81,6 +96,7 @@ const _graphic = (function() {
         // state === 0 means graphic is being loaded
         if (state === 0) {
             try {
+                calculateWinner();
                 updateRed();
                 updateBlue();
             } catch (e) {
@@ -97,4 +113,4 @@ const _graphic = (function() {
 
     function handleError(e) {console.error(e)}
     function handleWarning(w) {console.log(w)}
-});
+})();

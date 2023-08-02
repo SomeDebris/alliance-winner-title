@@ -1,0 +1,105 @@
+{
+    "matchID": 1,
+    "type": "Q",
+    "red": {
+        "name": "Red Alliance",
+        "color0": "#000000",
+        "color1": "#000000",
+        "lineColor": "#000000",
+        "damageTaken": 10000,
+        "damageDealt": 100000,
+        
+        "ships": [
+            {
+                "shipID": 1,
+                "name": "Red 1",
+                "author": "Author Red 1",
+                "D": 1,
+                "P": 1,
+                "L": 1,
+                "S": 1,
+                "rank": 1,
+                "RPs": 3,
+                "destructions": 3,
+                "destroyed": 0
+            },
+            {
+                "shipID": 2,
+                "name": "Red 2",
+                "author": "Author Red 2",
+                "D": 1,
+                "P": 1,
+                "L": 1,
+                "S": 1,
+                "rank": 1,
+                "RPs": 3,
+                "destructions": 3,
+                "destroyed": 0
+            },
+            {
+                "shipID": 3,
+                "name": "Red 3",
+                "author": "Author Red 3",
+                "D": 1,
+                "P": 1,
+                "L": 1,
+                "S": 1,
+                "rank": 1,
+                "RPs": 3,
+                "destructions": 3,
+                "destroyed": 0
+            }
+        ]
+    },
+
+    "blue": {
+        "name": "Blue Alliance",
+        "color0": "#000000",
+        "color1": "#000000",
+        "lineColor": "#000000",
+        "damageTaken": 10000,
+        "damageDealt": 100000,
+        
+        "ships": [
+            {
+                "shipID": 4,
+                "name": "Blue 1",
+                "author": "Author Blue 1",
+                "D": 1,
+                "P": 1,
+                "L": 1,
+                "S": 1,
+                "rank": 1,
+                "RPs": 3,
+                "destructions": 3,
+                "destroyed": 0
+            },
+            {
+                "shipID": 5,
+                "name": "Blue 2",
+                "author": "Author Blue 2",
+                "D": 1,
+                "P": 1,
+                "L": 1,
+                "S": 1,
+                "rank": 1,
+                "RPs": 3,
+                "destructions": 3,
+                "destroyed": 0
+            },
+            {
+                "shipID": 6,
+                "name": "Blue 3",
+                "author": "Author Blue 3",
+                "D": 1,
+                "P": 1,
+                "L": 1,
+                "S": 1,
+                "rank": 1,
+                "RPs": 3,
+                "destructions": 3,
+                "destroyed": 0
+            }
+        ]
+    }
+}
