@@ -10,10 +10,13 @@ const _graphic = (function() {
     let match_type;
     let red_alliance;
     let blue_alliance;
-    // 0 = Red alliance
-    // 1 = Blue alliance
-    let winner = 0;
+    let winner;
     let destruction = false;
+
+    const allianceRef {
+        Red: 'Red',
+        Blue: 'Blue'
+    };
 
     (function() {
         window['update'] = (raw) => update(raw);
@@ -56,7 +59,7 @@ const _graphic = (function() {
 
     function calculateWinner() {
         if (red_alliance.damageTaken >= blue_alliance.damageTaken) {
-            winner = 0;
+            winner = allianceRef.Red;
 
             if (blue_alliance.damageTaken === 0) {
                 destruction = true;
@@ -64,7 +67,7 @@ const _graphic = (function() {
                 destruction = false;
             }
         } else {
-            winner = 1;
+            winner = allianceRef.Blue;
 
             if (red_alliance.damageTaken === 0) {
                 destruction = true;
@@ -72,6 +75,11 @@ const _graphic = (function() {
                 destruction = false;
             }
         }
+    }
+
+    // look at colors and do stuff with em.
+    function updateStyle() {
+
     }
 
     function update(raw) {
@@ -111,6 +119,7 @@ const _graphic = (function() {
         if (state === 0) {
             try {
                 calculateWinner();
+                updateStyle();
                 updateRed();
                 updateBlue();
             } catch (e) {
