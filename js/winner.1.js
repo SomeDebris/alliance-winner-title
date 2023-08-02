@@ -13,7 +13,7 @@ const _graphic = (function() {
     let winner;
     let destruction = false;
 
-    const allianceRef {
+    const allianceRef = {
         Red: 'Red',
         Blue: 'Blue'
     };
